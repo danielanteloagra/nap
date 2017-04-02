@@ -12,7 +12,7 @@ describe('Paginator', () => {
   beforeEach(() => {
     callbackSpy = spy();
     wrapper = mount(<Paginator
-      total={50}
+      total={49}
       offset={0}
       limit={10}
       sort="price"
@@ -21,7 +21,18 @@ describe('Paginator', () => {
   });
 
   it('should display given result count', () => {
-    expect(wrapper.find(countSelector).text()).to.equal('50 Results');
+    expect(wrapper.find(countSelector).text()).to.equal('1 to 10 of 49 Results');
+  });
+
+  it('should display correct result count on last page', () => {
+    const lastPage = mount(<Paginator
+      total={49}
+      offset={40}
+      limit={10}
+      sort="price"
+      callback={callbackSpy}
+    />);
+    expect(lastPage.find(countSelector).text()).to.equal('41 to 49 of 49 Results');
   });
 
   it('should calculate and display correct number of page links', () => {
@@ -46,5 +57,17 @@ describe('Paginator', () => {
 
   it('should include stylesheet', () => {
     expect(wrapper.find('style')).to.have.lengthOf(1);
+  });
+
+  it('should add bottom modifier class', () => {
+    const modified = mount(<Paginator
+      total={49}
+      offset={40}
+      limit={10}
+      sort="price"
+      callback={callbackSpy}
+      modifier="bottom"
+    />);
+    expect(modified.find('.paginator').props().className).to.equal('paginator paginator--bottom');
   });
 });

@@ -30,13 +30,17 @@ function renderPageLinks(total, offset, limit, sort, callback) {
 }
 
 const Paginator = (props) => {
-  const { total, offset, limit, sort, callback } = props;
+  const { total, offset, limit, sort, callback, modifier } = props;
+  const classes = classNames('paginator', {
+    'paginator--bottom': modifier === 'bottom',
+  });
+  const currentPageLastItemNumber = offset + limit < total ? offset + limit : total;
 
   return (
-    <div className="paginator">
+    <div className={classes}>
       <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
       <div className="paginator__count">
-        <span>{ total } Results</span>
+        <span>{ offset + 1 } to { currentPageLastItemNumber } of { total } Results</span>
       </div>
       <ul className="paginator__link-list">
         { renderPageLinks(total, offset, limit, sort, callback) }
@@ -51,6 +55,7 @@ Paginator.propTypes = {
   limit: React.PropTypes.number.isRequired,
   sort: React.PropTypes.string.isRequired,
   callback: React.PropTypes.func.isRequired,
+  modifier: React.PropTypes.string,
 };
 
 export default Paginator;

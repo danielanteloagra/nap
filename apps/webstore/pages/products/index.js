@@ -83,7 +83,17 @@ class ProductListingPage extends React.Component {
           sort={ this.state.sort }
           callback={ this.updateListing }
         />
-        <ProductList listing={ this.state.listing }/>
+        <ProductList
+          listing={ this.state.listing }
+        />
+        <Paginator
+          total={ this.state.total }
+          offset={ this.state.offset }
+          limit={ this.state.limit }
+          sort={ this.state.sort }
+          callback={ this.updateListing }
+          modifier='bottom'
+        />
       </main>
     );
   }

@@ -48,4 +48,13 @@ $breakpoint: 600px;
       margin: 0;
     }
   }
+
+  .paginator--bottom {
+    .paginator__link-list {
+      @media (min-width: $breakpoint) {
+        top: auto;
+        bottom: 0;
+      }
+    }
+  }
 }
