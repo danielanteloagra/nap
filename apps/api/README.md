@@ -20,6 +20,11 @@ Note: for the integration tests the node app must be running on http://127.0.0.1
 attempt to start it before starting the tests, so it may give an error if it is already running. Use ```yarn stop``` to kill
 any strays.
 
+## Restify
+
+This project is built on [Restify](http://restify.com)
+
+
 ## Project Layout Overview
 
 ```

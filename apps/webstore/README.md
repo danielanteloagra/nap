@@ -14,6 +14,11 @@ To run tests simply run one of the following commands:
 yarn test
 ```
 
+## Next.JS
+
+This project is built on [Next.JS](https://github.com/zeit/next.js)
+
+
 ## Project Layout Overview
 
 ```
@@ -30,9 +35,9 @@ yarn test
 |                      
 |-- api/               Here goes the axios api connectors
 |-- common/            Here go common files e.g. header and footer
-|-- config/            Configuration files in here
 |-- components/        Here go all our app components
-|-- pages/             Container components that are used by the routing
+|-- config/            Configuration files in here
+|-- pages/             Container components that are used by the routing as entry points
 ```
 
 ### Component Orientated

@@ -43,7 +43,7 @@ or using docker directly
 docker exec -it $(IMAGE_NAME) bash
 ```
 
-### Locally
+### Locally (no docker)
 
 If you would like to get the project running without docker, you first have to edit app/webstore/config/xhr.js to use localhost instead of the linked container (uncomment line 2 and comment out line 3).
 
@@ -80,7 +80,7 @@ If you are switching between running the projects locally or via docker, you may
 
 ```bash
 make reset
-``
+```
 
 
 ## Notes & thoughts
