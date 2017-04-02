@@ -1,0 +1,25 @@
+@mixin dots($font-size) {
+  display: inline-block;
+  position: relative;
+  font-size: $font-size;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: calc(#{$font-size}/2 - 2px);
+    width: 600px;
+    height: 5px;
+    border-bottom: 1px dotted black;
+    content: ' ';
+  }
+
+  &:before {
+    right: 100%;
+    margin-right: 15px;
+  }
+
+  &:after {
+    left: 100%;
+    margin-left: 15px;
+  }
+};

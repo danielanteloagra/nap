@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  api:
+    container_name: nap-api
+    build:
+      context: ./apps/api
+    volumes:
+      - ./apps/api/:/usr/src/app
+    ports:
+      - "3000:3000"
+    working_dir: /usr/src/app
+    command: bash -c "yarn && yarn start"
+
+  webstore:
+    container_name: nap-webstore
+    build:
+      context: ./apps/webstore
+    volumes:
+      - ./apps/webstore:/usr/src/app
+    ports:
+      - "3100:3100"
+    links:
+      - api
+    working_dir: /usr/src/app
+    command: bash -c "yarn && yarn build && yarn dev"

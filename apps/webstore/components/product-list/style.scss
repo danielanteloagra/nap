@@ -1,0 +1,16 @@
+$breakpoint: 600px;
+
+// @TODO should use a grid
+.product-listing {
+  padding: 2rem 0;
+
+  .product {
+    display: inline-block;
+    width: 50%;
+
+    @media (min-width: $breakpoint) {
+      display: inline-block;
+      width: 33%;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.product {
+  padding: 1.5rem 0.5rem;
+  text-align: center;
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto 1rem;
+  }
+
+  &__designer,
+  &__name {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  &__designer {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &__name {
+    font-weight: normal;
+  }
+}

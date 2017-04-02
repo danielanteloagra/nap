@@ -1,0 +1,23 @@
+@import '../node_modules/node-normalize-scss/normalize';
+
+$font-stack-main: Helvetica, sans-serif;
+
+html {
+  font-family: $font-stack-main;
+  box-sizing: border-box;
+
+  * {
+    box-sizing: inherit;
+
+    &:before,
+    &:after {
+      box-sizing: inherit;
+    }
+  }
+
+  .container {
+    max-width: 950px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}

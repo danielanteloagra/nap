@@ -1,0 +1,3 @@
+--require tests/.mocha.config
+--recursive
+--reporter spec

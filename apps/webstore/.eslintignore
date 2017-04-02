@@ -1,0 +1,5 @@
+/node_modules/*
+/.next/
+next.config.js
+jest.mock.js
+postcss.config.js
