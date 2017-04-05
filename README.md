@@ -68,9 +68,9 @@ Note: I have only tested this on macOS running node 7.4 and yarn 0.18.1
 
 ## URLs
 
-Api is on http://localhost:3000/ and the web is on http://localhost:3100/
+Api is on http://localhost:3000/ eg. http://localhost:3000/api/products will return product list json.
 
-Open http://localhost:3100/ in any browser to see the implementation.
+The web is on http://localhost:3100/ (you can open this in any browser).
 
 
 ## Reset

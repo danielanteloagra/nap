@@ -1,5 +1,5 @@
-FROM node:7.8
+FROM node:7.8-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /var/project
 
 EXPOSE 3000

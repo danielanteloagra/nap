@@ -6,21 +6,21 @@ services:
     build:
       context: ./apps/api
     volumes:
-      - ./apps/api/:/usr/src/app
+      - ./apps/api/:/var/project
     ports:
       - "3000:3000"
-    working_dir: /usr/src/app
-    command: bash -c "yarn && yarn start"
+    working_dir: /var/project
+    command: /bin/sh -c "yarn && yarn start"
 
   webstore:
     container_name: nap-webstore
     build:
       context: ./apps/webstore
     volumes:
-      - ./apps/webstore:/usr/src/app
+      - ./apps/webstore:/var/project
     ports:
       - "3100:3100"
     links:
       - api
-    working_dir: /usr/src/app
-    command: bash -c "yarn && yarn build && yarn start"
+    working_dir: /var/project
+    command: /bin/sh -c "yarn && yarn build && yarn start"

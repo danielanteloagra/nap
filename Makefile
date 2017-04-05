@@ -14,10 +14,10 @@ dev-down:
 	docker rm $(DOCKER_WEBSTORE_IMAGE_NAME) || true
 
 ssh-api:
-	docker exec -it $(DOCKER_API_IMAGE_NAME) bash
+	docker exec -it $(DOCKER_API_IMAGE_NAME) /bin/sh
 
 ssh-web:
-	docker exec -it $(DOCKER_WEBSTORE_IMAGE_NAME) bash
+	docker exec -it $(DOCKER_WEBSTORE_IMAGE_NAME) /bin/sh
 
 reset:
 	rm -rf apps/api/node_modules && \
