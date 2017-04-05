@@ -53,8 +53,7 @@ Then you should get the api up and running:
 cd apps/api
 yarn install
 yarn start
-``
-
+```
 followed by the web store app:
 
 ```bash
